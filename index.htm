@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar__container">
+    <div class="navbar__brand"><h1><span>rent</span> personligt</h1></div>
+    <div class="navbar__menu__container navbar__menu__container--hidden" id="menuHolder">
+      <ul class="navbar__menu">
+        <li><a class="navbar__link active">omdömen</a></li>
+        <li><a class="navbar__link">tjänster och priser</a></li>
+        <li><a class="navbar__link">kontakta och boka</a></li>
+      </ul>
+    </div>
+    <div class="navbar__burger"><i id="burger__menu" class="fa fa-2x fa-bars"></i></div>
+  </div>
+</nav>
+<div class="wrap">
+  <div class="page page--active" data-page="0">
+    <div class="screen"></div>
+    <header class="header">
+      <div class="header__content">
+        <div class="row">
+          <div class="col">
+            <span class="headline">Maarit Manninen gör rent hus</span>
+            <h1><span>Rent</span><br>Personligt</h1>
+            <p>Jag erbjuder professionell städhjälp till ett överkomligt pris. Det kan vara regelbunden städning såväl som enstaka tillfällen</p>
+          </div>
+          <div class="col">
+            <span class="headline">personligt och bäst!</span>
+            <div class="quote"><i class="fa fa-quote-right"></i></div>
+            <p>
+              Vi är så nöjda med vårt val av Rent Personligt. Noggrann städning och omtanke in i minsta detalj. Så härligt att komma hem till ett skinande rent hem. Rekommenderas varmt!
+            </p>
+            <p class="author">Anne Johansson</p>
+            <span class="author__info">Husägare</span> 
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="page" data-page="1">
+    <div class="screen__green"></div>
+    <header class="header">
+      <div class="header__content">
+        <div class="row">
+          <div class="col">
+            <span class="headline text-white">Maarit Manninen gör rent hus</span>
+            <h1><span>Rent</span><br>Personligt</h1>
+            <p>Jag erbjuder professionell städhjälp till ett överkomligt pris. Det kan vara regelbunden städning såväl som enstaka tillfällen. </p>
+            <a class="contact__now">Ta kontakt redan nu</a>
+          </div>
+          <div class="col">
+            
+          <span class="headline text-white">personligt och bäst!</span>
+          <p>
+            Vi är så nöjda med vårt val av Rent Personligt. Noggrann städning och omtanke in i minsta detalj. Så härligt att komma hem till ett skinande rent hem. Rekommenderas varmt!
+          </p>
+          Anne Johansson
+          Husägare, Lerum
+
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="page" data-page="2">
+    <header class="header">
+      <div class="header__content"><h1>Moonfest<p>2020</p>Coming soon</h1></div>
+    </header>
+  </div>
+</div>
+<script src="/js/menu_link.js"></script>
+<script src="/js/menu_burger.js"></script>
+</body>
+</html>
