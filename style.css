@@ -15,7 +15,7 @@ body, html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #b5caba;
+  background: #555;
   color: #ccc;
 }
 
@@ -23,11 +23,15 @@ body {
   color: white !important;
 }
 
+.content {
+  padding: 0.5em;
+}
+
 .headline {
   color: #222;
   position: relative;
   width: auto;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .headline:after {
@@ -152,15 +156,6 @@ body {
   }
 }
 
-.navbar__menu__container {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
-  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-  transition: -webkit-transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-  transition: transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-  transition: transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1), -webkit-transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-}
-
 @media screen and (max-width: 768px) {
   .navbar__menu__container {
     position: absolute;
@@ -168,21 +163,27 @@ body {
     width: 100%;
     background: white;
     z-index: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    transition: -webkit-transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    transition: transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    transition: transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1), -webkit-transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
   }
   .navbar__menu__container--hidden {
     position: absolute;
     z-index: 1;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
-    -webkit-transition: -webkit-transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-    transition: -webkit-transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-    transition: transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-    transition: transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1), -webkit-transform 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    transition: -webkit-transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    transition: transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    transition: transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1), -webkit-transform 400ms cubic-bezier(0.165, 0.456, 0.665, 1);
   }
   .navbar__menu__container--hidden .navbar__menu {
     opacity: 0;
-    -webkit-transition: opacity 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-    transition: opacity 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    -webkit-transition: opacity 300ms cubic-bezier(0.165, 0.456, 0.665, 1);
+    transition: opacity 300ms cubic-bezier(0.165, 0.456, 0.665, 1);
   }
 }
 
@@ -197,8 +198,8 @@ body {
           flex-flow: row wrap;
   height: 100%;
   opacity: 1;
-  -webkit-transition: opacity 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
-  transition: opacity 600ms cubic-bezier(0.165, 0.456, 0.665, 1);
+  -webkit-transition: opacity 300ms cubic-bezier(0.165, 0.456, 0.665, 1);
+  transition: opacity 300ms cubic-bezier(0.165, 0.456, 0.665, 1);
 }
 
 @media screen and (max-width: 768px) {
@@ -410,11 +411,11 @@ body {
   position: absolute;
   z-index: 3;
   top: 0;
-  left: 0;
+  right: 0%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(186, 200, 186, 0.825), rgba(168, 226, 226, 0.425));
-  opacity: 0.825;
+  background: black;
+  opacity: 0.325;
 }
 
 .page--out {
@@ -483,8 +484,23 @@ body {
 .header {
   position: relative;
   width: 100%;
-  height: 100%;
   z-index: 5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 6vh 0;
+}
+
+@media screen and (min-width: 992px) {
+  .header {
+    padding: 0;
+  }
+}
+
+.header__content {
+  color: white;
+  z-index: 5;
+  font-family: "Oswald", sans-serif;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,120 +510,120 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
-.header__content {
-  color: white;
-  z-index: 5;
-  font-family: "Oswald", sans-serif;
+.header__content .welcome, .header__content .review {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 768px) {
-  .header__content .row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
+.header__content .welcome h1, .header__content .review h1 {
+  color: black;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.header__content .welcome span, .header__content .review span {
+  line-height: 38px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  color: #dedede;
+}
+
+@media screen and (min-width: 768px) {
+  .header__content .welcome, .header__content .review {
+    width: 90%;
   }
 }
 
-.header__content .row .col:last-child {
-  padding: 3vh;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  color: black;
-  background: rgba(255, 255, 255, 0.2);
+@media screen and (min-width: 992px) {
+  .header__content .welcome, .header__content .review {
+    width: 50%;
+  }
 }
 
-.header__content .row .col:last-child .quote {
-  font-size: 9vh;
-  padding: 3vh 0 0 0;
-  color: #252;
+.header__content .review {
+  margin-top: 6vh;
 }
 
-.header__content .row .col:last-child p {
+.header__content .review h1:first-of-type {
+  color: #00D500;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.765);
+}
+
+.header__content .review__quote {
+  font-size: 32px;
+  margin: 1.5vh 0;
+}
+
+.header__content .review p {
   font-family: "Open Sans", sans-serif;
-  font-size: 22px;
-  padding: 3vh 0;
-  font-weight: bold;
 }
 
-.header__content .row .col:last-child .author {
-  font-family: "Open Sans", sans-serif;
-  color: #666;
-  padding: 0;
-  font-size: 22px;
-  padding-bottom: 1vh;
+.header__content .review p:first-of-type {
+  margin-bottom: 3vh;
 }
 
-.header__content .row .col:last-child .author__info {
-  font-family: "Open Sans", sans-serif;
-  color: #666;
+.size__1 {
+  font-size: 12px;
+}
+
+.size__2 {
+  font-size: 16px;
+}
+
+.size__3 {
   font-size: 18px;
 }
 
-@media screen and (max-width: 992px) {
-  .header__content .row .col:last-child .headline {
-    font-size: 30px;
+.size__4 {
+  font-size: 20px;
+}
+
+.size__5 {
+  font-size: 24px;
+}
+
+@media screen and (min-width: 992px) {
+  .size__1 {
+    font-size: 16px;
   }
-  .header__content .row .col:last-child p {
+  .size__2 {
     font-size: 20px;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .header__content .row .col:last-child {
-    text-align: center;
-    padding: 6vh 0;
+  .size__3 {
+    font-size: 22px;
   }
-  .header__content .row .col:last-child p, .header__content .row .col:last-child .author {
-    font-size: 18px;
+  .size__4 {
+    font-size: 24px;
   }
-}
-
-.header__content .row .col:first-child {
-  padding: 3vh;
-  text-align: right;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  color: black;
-}
-
-.header__content .row .col:first-child h1 {
-  font-weight: bold;
-  font-size: 80px;
-  line-height: 80px;
-  margin: 3vh 0;
-}
-
-.header__content .row .col:first-child p {
-  line-height: 30px;
-  font-size: 22px;
-  font-family: "Open Sans", sans-serif;
-  margin-bottom: 3vh;
-  font-weight: bold;
-}
-
-@media screen and (max-width: 992px) {
-  .header__content .row .col:first-child .headline {
-    font-size: 30px;
-  }
-  .header__content .row .col:first-child p {
-    font-size: 20px;
+  .size__5 {
+    font-size: 28px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .header__content .row .col:first-child {
-    text-align: center;
-    padding: 6vh 0;
+.display__1 {
+  font-size: 30px;
+}
+
+.display__2 {
+  font-size: 42px;
+}
+
+.display__3 {
+  font-size: 54px;
+}
+
+@media screen and (min-width: 992px) {
+  .display__1 {
+    font-size: 44px;
   }
-  .header__content .row .col:first-child p {
-    font-size: 18px;
+  .display__2 {
+    font-size: 56px;
   }
-  .header__content .row .col:first-child h1 {
-    font-size: 60px;
-    line-height: 60px;
+  .display__3 {
+    font-size: 68px;
   }
 }
 /*# sourceMappingURL=style.css.map */

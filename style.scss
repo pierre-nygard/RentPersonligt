@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400+700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
-$back: #b5caba;
+$back: #555;
 $front: #ccc;
 $accent1:#008c00; 
 $accent2: #64dfba;
@@ -59,11 +59,13 @@ body {
 
 .text-white { color: white !important; }
 
+.content { padding: 0.5em };
+
 .headline {
   color: #222;
   position: relative;
   width: auto;
-  font-size: 40px;
+  font-size: 30px;
 
   &:after {
     content: '';
@@ -153,8 +155,6 @@ body {
   }
 
   &__menu__container {
-    transform: translateY(0%);
-    transition: transform $time/2 $ease-in-out;
 
     @media screen and(max-width: $md-device) {
       position: absolute;
@@ -162,16 +162,18 @@ body {
       width: 100%;
       background: white;
       z-index: 1;
+      transform: translateY(0%);
+      transition: transform $time/3 $ease-in-out;
+
       &--hidden {
-        
         position: absolute;
         z-index: 1;
         transform: translateY(-100%);
-        transition: transform $time/2 $ease-in-out;
+        transition: transform $time/3 $ease-in-out;
   
         .navbar__menu {
           opacity: 0;
-          transition: opacity $time/2 $ease-in-out;
+          transition: opacity $time/4 $ease-in-out;
         }
       }
     }
@@ -184,7 +186,7 @@ body {
     flex-flow: row wrap;
     height: 100%;
     opacity: 1;
-    transition: opacity $time/2 $ease-in-out;
+    transition: opacity $time/4 $ease-in-out;
 
     @media screen and (max-width: $md-device) {
       flex-flow: column wrap;
@@ -340,7 +342,7 @@ body {
   animation: none;
   z-index: 1;
   box-sizing: border-box;
-  margin-top: $navbarheight;
+  margin-top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -349,11 +351,11 @@ body {
     position: absolute;
     z-index: 3;
     top: 0;
-    left: 0;
+    right: 0%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(#bac8ba,0.825), rgba(rgb(168, 226, 226), 0.425));
-    opacity: 0.825;
+    background: black;
+    opacity: 0.325;
   }
 
   &--out {
@@ -378,127 +380,146 @@ body {
 .header {
   position: relative;
   width: 100%;
-  height: 100%;
   z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-sizing: border-box;
+  padding: $base*2 0;
+
+  @media screen and(min-width: $lg-device) {
+    padding: 0;
+  }
+
 
   &__content {
     color: white;
     z-index: 5;
     font-family: $oswald;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .row {
+    .welcome, .review {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(black, 0.5);
 
-      @media screen and (max-width: 768px) {
-        flex-flow: column wrap;
+      h1 {
+        color: black;
+        text-shadow: 0 0 10px rgba(white, 0.2);
+      }
+
+      span {
+        line-height: 38px;
+        font-family: $sans;
+        letter-spacing: 1px;
+        color: #dedede;
+      }
+
+      @media screen and (min-width: $md-device) {
+        width: 90%;
       }
       
-      .col {
+      @media screen and (min-width: $lg-device) {
+        width: 50%;
+      }
+    }
+    .review {
+      margin-top: $base*2;
+      
+      h1:first-of-type {
+        color: #00D500;
+        text-shadow: 0 0 20px rgba(black, 0.765);
+      }
 
-        &:last-child {
-          padding: 3vh;
-          text-shadow: 0 0 20px rgba(white, 0.5);
-          color: black;
-          background: rgba(white, 0.2);
-          
-          .quote {
-            font-size: $base*3;
-            padding: $base 0 0 0;
-            color: #252;
-          }
+      &__quote {
+        font-size: 32px;
+        margin: $base/2 0;
+      }
 
-          p {
-            font-family: $sans;
-            font-size: 22px;
-            padding: $base 0;
-            font-weight: bold;
-          }
+      p {
+        font-family: $sans;
 
-          .author {
-            font-family: $sans;
-            color: #666;
-            padding: 0;
-            font-size: 22px;
-            padding-bottom: $base/3;
-
-            &__info {
-              font-family: $sans;
-              color: #666;
-              font-size: 18px;
-            }
-          }
-
-          @media screen and (max-width: $lg-device) {
-          
-            .headline {
-              font-size: 30px;
-            }
-
-            p {
-              font-size: 20px;
-            }
-          }
-
-          @media screen and (max-width: 768px) {
-            text-align: center;
-            padding: $base*2 0;
-            
-            p, .author {
-              font-size: 18px;
-            }
-          }
-        }
-
-        &:first-child {
-          padding: 3vh;
-          text-align: right;
-          text-shadow: 0 0 20px rgba(white, 0.5);
-          color: black;
-
-          h1 {
-            font-weight: bold;
-            font-size: 80px;
-            line-height: 80px;
-            margin: $base 0;
-          }
-
-          p {
-            line-height: 30px;
-            font-size: 22px;
-            font-family: $sans;
-            margin-bottom: $base;
-            font-weight: bold;
-          }
-
-          @media screen and (max-width: $lg-device) {
-          
-            .headline {
-              font-size: 30px;
-            }
-
-            p {
-              font-size: 20px;
-            }
-          }
-
-          @media screen and (max-width: 768px) {
-            text-align: center;
-            padding: $base*2 0;
-
-            p {
-              font-size: 18px;
-            }
-
-            h1 {
-              font-size: 60px;
-              line-height: 60px;;
-            }
-          }
+        &:first-of-type {
+          margin-bottom: $base;
         }
       }
+    }
+    
+  }
+}
+
+.size {
+
+  &__1 {
+    font-size: 12px;
+  }
+
+  &__2 {
+    font-size: 16px;
+  }
+
+  &__3 {
+    font-size: 18px;
+  }
+
+  &__4 {
+    font-size: 20px;
+  }
+
+  &__5 {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: $lg-device) {
+
+    &__1 {
+      font-size: 16px;
+    }
+  
+    &__2 {
+      font-size: 20px;
+    }
+  
+    &__3 {
+      font-size: 22px;
+    }
+  
+    &__4 {
+      font-size: 24px;
+    }
+  
+    &__5 {
+      font-size: 28px;
+    }
+  }
+}
+
+.display {
+
+  &__1 {
+    font-size: 30px;
+  }
+
+  &__2 {
+    font-size: 42px;
+  }
+
+  &__3 {
+    font-size: 54px;
+  }
+
+  @media screen and (min-width: $lg-device) {
+    &__1 {
+      font-size: 44px;
+    }
+  
+    &__2 {
+      font-size: 56px;
+    }
+  
+    &__3 {
+      font-size: 68px;
     }
   }
 }
