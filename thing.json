@@ -1,0 +1,16 @@
+{
+  "result" : {
+    "items" : [
+      {
+        "item1" : {
+          "name" : "Janne",
+          "age", 34
+        }, 
+        "item2" : {
+          "name" : "Angelica",
+          "age" : 42
+        }
+      }
+    ]
+  }  
+}
