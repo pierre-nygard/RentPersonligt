@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Oswald:400+700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
-$sans: 'Open Sans', sans-serif; // Default
+$sans: 'Work Sans', sans-serif; // Default
 $ubuntu: 'Ubuntu', sans-serif;  // Menu
 $oswald: 'Oswald', sans-serif;  // Logo and Headlines
 
@@ -50,6 +50,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   background: $back;
   color: $front;
+  overflow: hidden;
 }
 
 .text-white { color: white !important; }
@@ -83,6 +84,121 @@ body {
   }
 }
 
+@media screen and (orientation: landscape) {
+  .landscape {
+    
+  }
+}
+
+#contact__window {
+
+}
+
+.contact__form {
+  
+  input, textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5em 1em;
+    font-family: $sans;  
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 0;
+    color: #666;
+    box-shadow: 0 0 10px rgba(black, 0.2);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input {
+    margin-bottom: 1em;
+
+    &[type="button"] {
+      font-weight: bold;
+      color: #666;
+      width: 200px;
+    }
+  }
+}
+
+.contact__window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  z-index: -9999;
+  opacity: 0;
+  transition: opacity $time/2 $ease-in-out;
+  border-top: 1px solid $bordercolor;
+  background: #008c00;
+
+  .content {
+    background: #008c00;
+    padding: $base;
+    padding-top: 30px;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-shadow: 0 0 10px rgba(black, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+
+    @media screen and (max-width: $md-device) {
+      width: 100%;
+    }
+
+    h1 {
+      font-family: $oswald;
+      color: #fff;
+    }
+
+    p {
+      color: ghostwhite;
+      text-shadow: 0 0 10px rgba(black, 0.2);
+    }
+
+    &__row {
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    &__col {
+
+      .row {
+
+        .col {
+          margin-left: 0.5em;
+
+          &:first-of-type {
+            margin-left: 0;
+            margin-right: 0.5em;
+          }
+        }
+
+        @media screen and (max-width: $md-device) {
+          flex-flow: column wrap;
+
+          .col, .col:first-of-type {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &--active {
+    opacity: 1;
+    z-index: 999;
+    transition: opacity $time/2 $ease-in-out;
+  }
+}
+
 /*
   NAVBAR
 */
@@ -93,7 +209,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,6 +242,7 @@ body {
     text-shadow: 0 0 40px rgba(white, 0.5);
     z-index: 998;
     box-sizing: border-box;
+    user-select: none;
 
     span {
       color: #aaa;
@@ -138,6 +255,7 @@ body {
       font-family: $oswald;
       letter-spacing: $base/18;
       font-weight: 900;
+      cursor: pointer;
     }
 
     @media screen and (max-width: $lg-device) {
@@ -150,6 +268,10 @@ body {
   }
 
   &__menu__container {
+
+    &--truehidden {
+      display: none;
+    }
 
     @media screen and(max-width: $md-device) {
       position: absolute;
@@ -211,6 +333,12 @@ body {
     top: 30px;
     right: 30px;
 
+    &--hidden {
+      opacity: 0;
+      display: none;
+      transition: opacity $time/2 $ease-in-out;
+    }
+
     @media screen and (min-width: $md-device){
       display: none;
     }
@@ -219,6 +347,22 @@ body {
       cursor: pointer;
     }
   }
+
+  &__close {
+    position: absolute;
+    z-index: 9999;
+    top: 30px;
+    right: 30px;
+    display: none;
+    opacity: 0;
+    cursor: pointer;
+
+    &--show {
+      display: block;
+      opacity: 1;
+    }
+  }
+
 
   &__link.active {
     pointer-events: none;
@@ -229,54 +373,32 @@ body {
     transition-delay: $time/2;
 
     @media screen and (min-width: $md-device) {
+
       &:before {
         opacity: 1;
         transform: scale(100%);
-        transition: transform $time/2 ease-in-out, opacity $time/2 ease-in-out;
-      }
-      &:after {
-        opacity: 1;
-        transform: scaleX(100%);
         transition: transform $time/2 ease-in-out, opacity $time/2 ease-in-out;
       }
     }
   }
 
   @media screen and (min-width: $md-device) {
-    &__link:after {
-        content:'';
-        position: absolute;
-        background: $accent1;
-        height: 1px;
-        width: 100%;
-        bottom: -4px;
-        left: 0%;
-        z-index: 5;
-        opacity: 0;
-        transform: scaleX(0%);
-        transition: transform $time/2 ease-in-out, opacity $time/2 ease-in-out;
-    }
   
     &__link:before {
-        content:'';
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        background: $accent1;
-        border-bottom: 1px solid $accent1;
-        border-right: 1px solid $accent1;
-        rotate: 45deg;
-        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-        bottom: -7px;
-        left: 50%;
-        z-index: 5;
-        transform: scale(0%);
-        opacity: 0;
-        transition: transform $time/2 ease-in-out, opacity $time/2 ease-in-out;
+      content:"\f078";
+      font-family: 'FontAwesome';
+      position: absolute;
+      margin: 0 auto;
+      bottom: -18px;
+      left: 44%;
+      z-index: 5;
+      transform: scale(0%);
+      opacity: 0;
+      transition: transform $time/2 ease-in-out, opacity $time/2 ease-in-out;
     } 
   }
 
-  &__link, &__link__search {
+  &__link {
     cursor: pointer;
     font-family: $ubuntu;
     text-transform: uppercase;
@@ -287,17 +409,13 @@ body {
     display: block;
     position: relative;
     z-index: 999;
+    user-select: none;
 
     &:hover {
       color: rgba(#888, 1);
       text-shadow: 0 0 40px rgba(white, 0.5);
       transition: color $time/4 $ease-in-out, text-shadow $time/4 $ease-in-out;
     }
-  }
-
-  &__link__search {
-    margin-left: $base*2;
-    padding-left: 0;
   }
 }
 
@@ -308,7 +426,7 @@ body {
 
 .wrap {
   position: relative;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-flow: column wrap;
@@ -322,21 +440,22 @@ body {
 .page[data-page="0"] {
   background-image: url(/gfx/kitchen2.jpg);
 }
+
 .page[data-page="1"] {
   background-image: url(/gfx/kitchen1.jpg);
 }
 
 .page {
   background-color: black;
-  background-size: cover;
-  min-height: calc(100% - 90px);
+  background-size: auto 133%;
+  min-height: 100vh;
   width: 100%;
   position: absolute;
   transform: translateX(100%);
   animation: none;
   z-index: 1;
   box-sizing: border-box;
-  margin-top: 90px;
+  padding-top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,6 +478,7 @@ body {
       99% { transform: translateX(-50%); opacity: 1; }
       100% { transform: translateX(100%); opacity: 1; }
     }
+
     animation-name: out;
     animation-duration: $time/2;
     animation-timing-function: $ease-in;
@@ -382,7 +502,6 @@ body {
     padding: 0;
   }
 
-
   &__content {
     color: white;
     z-index: 5;
@@ -392,23 +511,11 @@ body {
     justify-content: center;
     align-items: center;
 
-    .welcome, .review {
+    .content {
       width: 100%;
       margin: 0 auto;
       text-align: center;
       text-shadow: 0 0 10px rgba(black, 0.5);
-
-      h1 {
-        color: #00D500;
-        text-shadow: 0 0 10px rgba(white, 0.2);
-      }
-
-      span {
-        line-height: 38px;
-        font-family: $sans;
-        letter-spacing: 1px;
-        color: #dedede;
-      }
 
       @media screen and (min-width: $md-device) {
         width: 90%;
@@ -417,29 +524,73 @@ body {
       @media screen and (min-width: $lg-device) {
         width: 50%;
       }
-    }
-    .review {
-      margin-top: $base*2;
-      
-      h1:first-of-type {
-        color: darken(#00D500,5%);
-        text-shadow: 0 0 20px rgba(black, 0.765);
-      }
 
-      &__quote {
-        font-size: 32px;
-        margin: $base/2 0;
-      }
-
-      p {
-        font-family: $sans;
-
-        &:first-of-type {
+      &__welcome {
+        h1 {
+          color: #00D500;
+          text-shadow: 0 0 10px rgba(white, 0.2);
           margin-bottom: $base;
+        }
+  
+        span {
+          font-family: $sans;
+          letter-spacing: 1px;
+          color: #dedede;
+        }
+      }
+  
+      &__review {
+        margin-top: $base*2;
+        padding: $base;
+        font-family: $sans;
+        
+        h1 {
+          font-family: $oswald;
+          color: darken(#00D500,5%);
+          text-shadow: 0 0 20px rgba(black, 0.665);
+        }
+  
+        &__quote {
+          font-size: 32px;
+          margin: $base/2 0;
+        }
+  
+        p {
+
+          &:first-of-type {
+            margin-bottom: $base;
+          }
+        }
+
+        span {
+          font-weight: bold;
+          letter-spacing: .5px; 
+          line-height: $base; 
+        }
+      }
+
+      &__services {
+        text-align: left;
+
+        h1 {
+          color: #00D500;
+          text-shadow: 0 0 20px rgba(black, 0.665);
+          margin-bottom: $base/4;
+
+          &:not(:first-of-type) {
+            margin-top: $base;
+            color: darken(#00D500,5%);
+          }
+        }
+
+        p {
+          font-family: $sans;
+          margin-bottom: $base/4;
+          text-indent: $base/2;
+          text-shadow: 0 0 10px rgba(black, 0.5);
         }
       }
     }
-    
   }
 }
 
@@ -450,19 +601,19 @@ body {
   }
 
   &__2 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   &__3 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   &__4 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   &__5 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   @media screen and (min-width: $lg-device) {
@@ -492,15 +643,15 @@ body {
 .display {
 
   &__1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   &__2 {
-    font-size: 42px;
+    font-size: 36px;
   }
 
   &__3 {
-    font-size: 54px;
+    font-size: 42px;
   }
 
   @media screen and (min-width: $lg-device) {
@@ -513,7 +664,7 @@ body {
     }
   
     &__3 {
-      font-size: 68px;
+      font-size: 64px;
     }
   }
 }

@@ -8,75 +8,95 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body>
-<nav class="navbar">
-  <div class="navbar__container">
-    <div class="navbar__brand"><h1><span>rent</span> personligt</h1></div>
-    <div class="navbar__menu__container navbar__menu__container--hidden" id="menuHolder">
-      <ul class="navbar__menu">
-        <li><a class="navbar__link active">omdömen</a></li>
-        <li><a class="navbar__link">tjänster och priser</a></li>
-        <li><a class="navbar__link">kontakta och boka</a></li>
-      </ul>
+<body id="body">
+  <!-- ACTIVATED FOR DEVELOPMENT -->
+  <div id="contact__window" class="contact__window">  
+      <div class="content">
+        <form class="contact__form">
+          <div class="content__row">
+            <div class="content__col">
+              <div class="row">
+                <h1 class="display__2">Kul att du hör av dig!</h1>
+              </div>
+              <div class="content__col" style="margin-bottom: 3em">
+                <p class="size__3">Vad skulle du vilja ha hjälp med?</p>
+              </div>
+              <div class="row">
+                <div class="col" style="">
+                  <input class="size__2" type="text" placeholder="Namn">
+                </div>
+                <div class="col" style="">
+                  <input class="size__2" type="email" placeholder="E-post">
+                </div>
+              </div>
+            </div>
+            <div class="content__col" style="margin-bottom: 1em;">
+              <textarea rows="5" class="size__2" placeholder="Meddelande"></textarea class="size__2">
+            </div>
+            <div class="content__col" style="text-align: center;">
+              <input type="button" class="size__3" value="Skicka">
+            </div>
+        </div>
+      </form>
     </div>
-    <div class="navbar__burger"><i id="burger__menu" class="fa fa-2x fa-bars"></i></div>
   </div>
-</nav>
-<div class="wrap">
-  <div class="page page--active" data-page="0">
-    <div class="screen"></div>
-    <header class="header">
-      <div class="header__content">
-        <div class="content">
-          <div class="welcome">
-            <h1 class="display__2">Rent Personligt</h1>
-            <span class="size__5">Maarit Manninen<br>Gör rent hus</span>
-          </div>
-          <div class="review">
-            <h1 class="review__title display__1">personligt och bäst!</h1>
-            <div class="review__quote"><i class="fa fa-quote-right"></i></div>
-            <p class="size__3">
-              Vi är så nöjda med vårt val av Rent Personligt. Noggrann städning och omtanke in i minsta detalj. Så härligt att komma hem till ett skinande rent hem. Rekommenderas varmt!
-            </p>
-            <p class="size__4">Anne Johansson</p>
-            <span class="size__4">Husägare</span> 
+  <nav class="navbar">
+    <div class="navbar__container">
+      <div class="navbar__brand"><h1 id="brand"><span>rent</span> personligt</h1></div>
+      <div class="navbar__menu__container navbar__menu__container--hidden" id="menuHolder">
+        <ul class="navbar__menu">
+          <li><a class="navbar__link active">omdömen</a></li>
+          <li><a class="navbar__link">tjänster och priser</a></li>
+          <li><a class="navbar__link" id="contact">kontakta och boka</a></li>
+        </ul>
+      </div>
+      <div class="navbar__close" id="navbar__close"><i id="burger__close" class="fa fa-2x fa-times"></i></div>
+      <div class="navbar__burger" id="navbar__burger"><i id="burger__menu" class="fa fa-2x fa-bars"></i></div>
+    </div>
+  </nav>
+  <div class="wrap">
+    <div class="page page--active" data-page="0">
+      <div class="screen"></div>
+      <header class="header">
+        <div class="header__content">
+          <div class="content">
+            <div class="content__welcome">
+              <h1 class="display__2">Rent Personligt</h1>
+              <span class="size__5">Maarit Manninen<br>Gör rent hus</span>
+            </div>
+            <div class="content__review">
+              <h1 class="review__title display__1">personligt och bäst!</h1>
+              <div class="content__review__quote"><i class="fa fa-quote-right"></i></div>
+              <p class="size__3">
+                Vi är så nöjda med vårt val av Rent Personligt. Noggrann städning och omtanke in i minsta detalj. Så härligt att komma hem till ett skinande rent hem. Rekommenderas varmt!
+              </p>
+              <p class="size__4">Anne Johansson</p>
+              <span class="size__4">Husägare</span> 
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-  </div>
-  <div class="page" data-page="1">
-    <div class="screen__green"></div>
-    <header class="header">
-      <div class="header__content">
-        <div class="row">
-          <div class="col">
-            <span class="headline text-white">Maarit Manninen gör rent hus</span>
-            <h1><span>Rent</span><br>Personligt</h1>
-            <p>Jag erbjuder professionell städhjälp till ett överkomligt pris. Det kan vara regelbunden städning såväl som enstaka tillfällen. </p>
-            <a class="contact__now">Ta kontakt redan nu</a>
-          </div>
-          <div class="col">
+      </header>
+    </div>
+    <div class="page" data-page="1">
+      <div class="screen"></div>
+      <header class="header">
+        <div class="header__content">
+          <div class="content content__services">
+            <h1 class="display__2">Maarit Manninen</h1>
+            <p class="size__3">Jag beslutade mig för att starta eget företag efter 35 år inom städbranschen. Med Rent Personligt hjälper jag både privatpersoner och företaga med lokalvård och städning. Bokning kan vara regelbunden eller för enstaka tillfällen.</</p>
+            <p class="size__3">Mina områden är främst Lerum med omnejd, även Göteborg.</p>
             
-          <span class="headline text-white">personligt och bäst!</span>
-          <p>
-            Vi är så nöjda med vårt val av Rent Personligt. Noggrann städning och omtanke in i minsta detalj. Så härligt att komma hem till ett skinande rent hem. Rekommenderas varmt!
-          </p>
-          Anne Johansson
-          Husägare, Lerum
-
+            <h1 class="display__1">privat städning</h1>
+            <p class="size__3">245 SEK/timma efter rutavdrag. Allt nödvändigt material för städning har jag med</p>
+            
+            <h1 class="display__1">företag</h1>
+            <p class="size__3">Från 425 SEK/timma exklusive moms</p>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   </div>
-  <div class="page" data-page="2">
-    <header class="header">
-      <div class="header__content"><h1>Moonfest<p>2020</p>Coming soon</h1></div>
-    </header>
-  </div>
-</div>
-<script src="/js/menu_link.js"></script>
-<script src="/js/menu_burger.js"></script>
+  <script src="/js/menu_link.js"></script>
+  <script src="/js/menu_burger.js"></script>
 </body>
 </html>
