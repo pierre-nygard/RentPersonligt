@@ -18,22 +18,13 @@ function initMenu() {
   }
 }
 
-function openContactWindow() {
+function toggleContactWindow() {
   let contactWindow = document.getElementById("contact__window");
-  if(contactWindowClosed){
-    document.getElementById('menuHolder').classList.add('navbar__menu__container--truehidden');
-    document.getElementById('navbar__burger').classList.add('navbar__burger--hidden');
-    document.getElementById('navbar__close').classList.add('navbar__close--show');
-    contactWindow.classList.add("contact__window--active")
-    menuActive = false;
-  }
-  else {
-    document.getElementById('menuHolder').classList.remove('navbar__menu__container--truehidden');
-    document.getElementById('navbar__burger').classList.remove('navbar__burger--hidden');
-    document.getElementById('navbar__close').classList.remove('navbar__close--show');
-    contactWindow.classList.remove("contact__window--active")
-    menuActive = true;
-  }
+  menuActive = (contactWindowClosed) ? false : true;
+  document.getElementById('menuHolder').classList.toggle('navbar__menu__container--truehidden');
+  document.getElementById('navbar__burger').classList.toggle('navbar__burger--hidden');
+  document.getElementById('navbar__close').classList.toggle('navbar__close--show');
+  contactWindow.classList.toggle("contact__window--active")
   contactWindowClosed = !contactWindowClosed;
 }
 
@@ -42,7 +33,7 @@ function linkPress(pageNum, toggleMenu = true)
 {
   if(pageNum == 2) {
     // Contact link
-    openContactWindow();
+    toggleContactWindow();
     return;
   }
 
@@ -74,7 +65,7 @@ function linkPress(pageNum, toggleMenu = true)
     burgerEvent();
   // Set timer for link activation
   menuActive = false;
-  setTimeout(() => {menuActive = true}, 600);
+  setTimeout(() => {menuActive = true}, 1200);
 }
 
 function setActiveLink(o, n) {

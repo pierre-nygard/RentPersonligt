@@ -5,7 +5,7 @@ var burgerHidden = true;
 
 function initBurger() {
   burgerObj.addEventListener("click", burgerEvent);
-  closeObj.addEventListener("click", openContactWindow)
+  closeObj.addEventListener("click", toggleContactWindow)
 }
 
 function burgerEvent() {
