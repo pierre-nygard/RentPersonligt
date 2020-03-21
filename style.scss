@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400+700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
-$sans: 'Work Sans', sans-serif; // Default
+$sans: 'Arial', sans-serif; // Default
 $ubuntu: 'Ubuntu', sans-serif;  // Menu
 $oswald: 'Oswald', sans-serif;  // Logo and Headlines
 
@@ -134,10 +134,10 @@ body {
   opacity: 0;
   transition: opacity $time/2 $ease-in-out;
   border-top: 1px solid $bordercolor;
-  background: #008c00;
+  background: #72bc44; 
 
   .content {
-    background: #008c00;
+    background: #72bc44;
     padding: $base;
     padding-top: 30px;
     height: 100vh;
@@ -245,13 +245,13 @@ body {
     user-select: none;
 
     span {
-      color: #aaa;
+      color: #666;
     }
 
     h1 {
       text-transform: uppercase;
       font-size: 34px;
-      color: #00AC00;
+      color: #72bc44;
       font-family: $oswald;
       letter-spacing: $base/18;
       font-weight: 900;
@@ -367,10 +367,9 @@ body {
   &__link.active {
     pointer-events: none;
     cursor: none;
-    color: rgba(#888, 1);
+    color: rgba(darken(#72bc44, 10%), 1);
     transition: color $time/4 $ease-in;
     text-shadow: 0 0 40px rgba($accent1, 0.8);
-    transition-delay: $time/2;
 
     @media screen and (min-width: $md-device) {
 
@@ -492,7 +491,7 @@ body {
     width: 100%;
     height: 100%;
     background: black;
-    opacity: 0.475;
+    opacity: .625;
   }
 }
 
@@ -532,14 +531,15 @@ body {
       &__welcome {
           
         h1 {
-          color: #00D500;
+          color: #72bc44;
           text-shadow: 0 0 10px rgba(black, 0.2);
-          margin-bottom: $base;
+          margin-bottom: $base/4;
+          text-transform: uppercase;
+          letter-spacing: 2px;
         }
   
         span {
-          font-family: $sans;
-          letter-spacing: 1px;
+          font-family: $oswald;
           color: #dedede;
           line-height: 1.25em;
         }
@@ -594,7 +594,7 @@ body {
         
         h1 {
           font-family: $oswald;
-          color: darken(#00D500,5%);
+          color: darken(#fff,5%);
           text-shadow: 0 0 10px rgba(black, 0.465);
         }
   
@@ -605,7 +605,7 @@ body {
   
         p {
           font-weight: bold;
-          color: #00D500;
+          color: #fff;
           line-height: 1.25em;
 
           &:first-of-type {
@@ -620,13 +620,13 @@ body {
         text-align: left;
 
         h1 {
-          color: #00D500;
+          color: #72bc44;
           text-shadow: 0 0 20px rgba(black, 0.665);
           margin-bottom: $base/5;
 
           &:not(:first-of-type) {
             margin-top: $base/2;
-            color: darken(#00D500,5%);
+            color: darken(#fff,5%);
           }
         }
 
@@ -688,6 +688,9 @@ body {
 }
 
 .display {
+  &__1__1 {
+    font-size: 24px;
+  }
 
   &__1 {
     font-size: 28px;
@@ -702,6 +705,10 @@ body {
   }
 
   @media screen and (min-width: $lg-device) {
+    &__1__1 {
+      font-size: 32px;
+    }
+
     &__1 {
       font-size: 44px;
     }

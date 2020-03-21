@@ -4,45 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Städ för Hem och Företag - RENT PERSONLIGT</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body id="body">
-  <!-- ACTIVATED FOR DEVELOPMENT -->
   <div id="contact__window" class="contact__window">  
-      <div class="content">
-        <form class="contact__form">
-          <div class="content__row">
-            <div class="content__col">
-              <div class="row">
-                <h1 class="display__2">Kul att du hör av dig!</h1>
+    <div class="content">
+      <form class="contact__form" action="mailsent.php" method="POST">
+        <div class="content__row">
+          <div class="content__col">
+            <div class="row">
+              <h1 class="display__2">Kul att du hör av dig!</h1>
+            </div>
+            <div class="content__col" style="margin-bottom: 3em">
+              <p class="size__3">Vad skulle du vilja ha hjälp med?</p>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input class="size__2" type="text" name="name" placeholder="Namn">
               </div>
-              <div class="content__col" style="margin-bottom: 3em">
-                <p class="size__3">Vad skulle du vilja ha hjälp med?</p>
-              </div>
-              <div class="row">
-                <div class="col" style="">
-                  <input class="size__2" type="text" placeholder="Namn">
-                </div>
-                <div class="col" style="">
-                  <input class="size__2" type="email" placeholder="E-post">
-                </div>
+              <div class="col" style="">
+                <input class="size__2" name="email" type="email" placeholder="E-post">
               </div>
             </div>
-            <div class="content__col" style="margin-bottom: 1em;">
-              <textarea rows="5" class="size__2" placeholder="Meddelande"></textarea class="size__2">
-            </div>
-            <div class="content__col" style="text-align: center;">
-              <input type="button" class="size__3" value="Skicka">
-            </div>
+          </div>
+          <div class="content__col" style="margin-bottom: 1em;">
+            <textarea rows="5" name="message" class="size__2" placeholder="Meddelande"></textarea>
+          </div>
+          <div class="content__col" style="text-align: center;">
+            <input type="submit" class="size__3" value="Skicka">
+          </div>
+          <span style="color: white">Du kan också skicka ett SMS till nummer <span style="font-weight: 700;">+46 734 177 922</span> så ringer jag upp så fort jag kan.</span>
         </div>
       </form>
     </div>
   </div>
   <nav class="navbar">
     <div class="navbar__container">
-      <div class="navbar__brand"><h1 id="brand"><span>rent</span> personligt</h1></div>
+      <div class="navbar__brand">
+        <h1 id="brand"><span>rent</span> personligt</h1>
+        
+      </div>
       <div class="navbar__menu__container navbar__menu__container--hidden" id="menuHolder">
         <ul class="navbar__menu">
           <li><a class="navbar__link active">omdömen</a></li>
@@ -62,11 +65,11 @@
           <div class="content">
             <div class="content__welcome">
               <h1 class="display__2">Rent Personligt</h1>
-              <span class="size__5">Maarit Manninen<br>Gör rent hus</span>
+              <span class="display__1">Städ för hem och företag</span>
             </div>
             <div class="content__review__wrap">
               <div class="content__review content__review--inactive" id="review-one" data-review="1">
-                <h1 class="review__title display__1">personligt och bäst</h1>
+                <h1 class="review__title display__1__1">personligt och bäst</h1>
                 <div class="content__review__quote"><i class="fa fa-quote-right"></i></div>
                 <p class="size__3">
                   Vi är så nöjda med vårt val av Rent Personligt. Noggrann städning och omtanke in i minsta detalj. Så härligt att komma hem till ett skinande rent hem. Rekommenderas varmt!
@@ -74,7 +77,7 @@
                 <p class="size__4">Anne</p>
               </div>
               <div class="content__review content__review--inactive" id="review-two" data-review="2">
-                <h1 class="review__title display__1">ingen tanke på byte</h1>
+                <h1 class="review__title  display__1__1">ingen tanke på byte</h1>
                 <div class="content__review__quote"><i class="fa fa-quote-right"></i></div>
                 <p class="size__3">
                   Vi har testat flera olika städfirmor med blandade resultat. Sedan vi valde Rent Personligt har det inte funnits en tanke på att byta. Bra städning, stor noggrannhet och väldigt flexibel service. Rekommenderas utan tvekan!  
@@ -92,7 +95,7 @@
         <div class="header__content">
           <div class="content content__services">
             <h1 class="display__2">Maarit Manninen</h1>
-            <p class="size__3">Jag beslutade mig för att starta eget företag efter 35 år inom städbranschen. Med Rent Personligt hjälper jag både privatpersoner och företaga med lokalvård och städning. Bokning kan vara regelbunden eller för enstaka tillfällen.</</p>
+            <p class="size__3">Jag beslutade mig för att starta eget företag efter 35 år inom städbranschen. Med Rent Personligt hjälper jag både privatpersoner och företag med lokalvård och städning. Bokning kan vara regelbunden eller för enstaka tillfällen.</</p>
             <p class="size__3">Mina områden är främst Lerum med omnejd, även Göteborg.</p>
             
             <h1 class="display__1">privat städning</h1>
