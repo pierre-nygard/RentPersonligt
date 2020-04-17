@@ -14,11 +14,14 @@ Website can be found [here](https://www.rentpersonligt.com/).
 * InkScape
 * One computer
 
-## Fundaments
+## Tools
 
 VS Code
 
-- HTML, SASS, JavaScript, PHP
+- HTML
+- SASS
+- JavaScript
+- PHP
 
 ## Contact
 
