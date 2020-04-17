@@ -16,8 +16,7 @@ Website can be found [here](https://www.rentpersonligt.com/).
 
 ## Tools
 
-VS Code
-
+- VS Code
 - HTML
 - SASS
 - JavaScript
