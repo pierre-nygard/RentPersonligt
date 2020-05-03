@@ -1,4 +1,4 @@
-# cleaning-company-website
+# Cleaning company Website
 
 Website for a cleaning company
 
