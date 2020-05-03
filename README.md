@@ -1,6 +1,6 @@
 # cleaning-company-website
 
-Website for a family members company
+Website for a cleaning company
 
 Website can be found [here](https://www.rentpersonligt.com/).
 
